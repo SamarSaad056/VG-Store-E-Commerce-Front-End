@@ -1,7 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function HomePage() {
+function HomePage() {
   return (
-    <div>HomePage</div>
+
+    <div className="Home">
+    	<svg>
+		<text x="50%" y="50%" dy=".35em" text-anchor="middle">
+			Welcome to GHub!
+		</text>
+	</svg>
+  <p className="home-description">
+    <b>Step into the world of gaming at GHub!</b>
+    </p>
+    <Link to="/Games">
+      <button className="btn-view-products">View Games</button>
+    </Link>
+  </div>
+    
+
+    
   )
 }
+
+export default HomePage
