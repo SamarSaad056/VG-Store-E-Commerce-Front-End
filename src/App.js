@@ -8,21 +8,25 @@ import Navbar from './Components/NavBar';
 import Footer from './Components/Footer';
 import Cart from './Components/Cart.js';
 import LogInPage from './Pages/LogInPage';
+import DashboardPage from './Pages/DashboardPage.js';
+import Bot from "./Pages/Bot.js"
 
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-
-
+  const [userRole, setUserRole] = useState(null);
   const [user, setUser] = useState(null); // State to manage user info
 
-  const handleLogin = (userData) => {
+  const handleLogin = (userData,role) => {
     setUser(userData); 
-    
-};
+    setUserRole(role);
+  
+
+  };
+
   return (
     <div>
-      <Navbar />
+      <Navbar userRole={userRole}/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route 
@@ -32,7 +36,9 @@ function App() {
         <Route path="/GameDetail/:id" element={<ProductDetailPage />} />
         <Route path="/Cart" element={<Cart cartItems={cartItems} />} />
         <Route path="/LogIn" element={<LogInPage onLogin={handleLogin}/>} />
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
+      <Bot/>
       <Footer />
     </div>
   );

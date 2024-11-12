@@ -22,8 +22,8 @@ function ProductPage({ cartItems, setCartItems }) {
     axios
       .get(url)
       .then((response) => {
-        setProducts(response.data);
-        const prices = response.data.map(
+        setProducts(response.data.videoGamesInfos);
+        const prices = response.data.videoGamesInfos.map(
           (product) => product.videoGameVersions[0].price
         );
         if (prices.length > 0) {
@@ -91,6 +91,8 @@ function ProductPage({ cartItems, setCartItems }) {
 
   return (
     <div className="ProductPageDiv">
+       <div className="ContentWrapper">
+       <div className="SearchDiv">
       <h2>Explore our Games</h2>
       <input
         type="text"
@@ -100,8 +102,10 @@ function ProductPage({ cartItems, setCartItems }) {
         className="searchInput"
       />
 
-      <div className="ContentWrapper">
+    
         <Filter onFilterChange={handleFilterChange} />
+        </div>
+        
         <div className="ProductList">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
@@ -136,8 +140,10 @@ function ProductPage({ cartItems, setCartItems }) {
             </div>
           )}
         </div>
+        </div>
       </div>
-    </div>
+      
+   
   );
 }
 

@@ -25,6 +25,22 @@ const Cart = () => {
     }, 0);
   };
 
+  const increaseQuantity = (itemId) => {
+    setCartItems(cartItems.map(item => 
+      item.videoGameInfoId === itemId 
+      ? { ...item, quantity: item.quantity + 1 } 
+      : item
+    ));
+  };
+
+  const decreaseQuantity = (itemId) => {
+    setCartItems(cartItems.map(item => 
+      item.videoGameInfoId === itemId && item.quantity > 1 
+      ? { ...item, quantity: item.quantity - 1 } 
+      : item
+    ));
+  };
+
   const totalPrice = calculateTotalPrice();
 
   return (
@@ -48,33 +64,39 @@ const Cart = () => {
                     className="GameImage"
                   />
                 </div>
-                {item.gameName}
-                &nbsp;&nbsp;
-                <h4>
+                <h3 >{item.gameName}</h3>
+                
+               
+                <h4 className="Price">Price : 
                   {new Intl.NumberFormat("en-US", {
                     style: "currency",
                     currency: "USD",
                   }).format(item.videoGameVersions[0].price)}
-                  &nbsp;&nbsp;
+                  
                 </h4> 
                 
-                <h4>Quantity: {item.quantity}</h4>
-
-                <button onClick={() => removeItem(item.videoGameInfoId)}>
+                <p className="Quantity">Quantity: {item.quantity}</p>
+                  
+                <button className="QuantityButton1" onClick={() => decreaseQuantity(item.videoGameInfoId)}>-</button>
+                <button className="QuantityButton2" onClick={() => increaseQuantity(item.videoGameInfoId)}>+</button>
+               
+                
+                <button className="RemoveButton"onClick={() => removeItem(item.videoGameInfoId)}>
                   Remove
                 </button>
                 
               </div>
             ))}
             
-            <h3>
-            
+            <h3 className="TotailPrice">
               Total Price:{" "}
               {new Intl.NumberFormat("en-US", {
                 style: "currency",
                 currency: "USD",
               }).format(totalPrice)}
+              <button className="OrderButton">Order</button>
             </h3>
+            
           </ul>
         )}
       </div>
@@ -83,7 +105,7 @@ const Cart = () => {
 };
 
 Cart.propTypes = {
-  // If using PropTypes for initial items, you can define them here
+  
 };
 
 export default Cart;

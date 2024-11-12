@@ -8,40 +8,40 @@ This project is a frontend for an e-commerce website, developed using modern web
 
 **Pages to Create:**
 
-1. Home page
-2. Product page(list all the products)
-3. Product Detail(contain the details of a product)
-4. Dashboard page
+1.[x]Home page
+2.[x] Product page(list all the products)
+3.[x]Product Detail(contain the details of a product)
+4.[X]Dashboard page
 
 **Functionalities for a Visitor:**
 
-- Get list of products
-- Search products by name
-- Filter products price
-- Add products to a cart
-- Remove products from a cart
+- [x]Get list of products
+- [x]Search products by name
+- [x]Filter products price
+- [x]Add products to a cart
+- [x]Remove products from a cart
 
 **Functionalities for an Admin:**
 
-- Add a new product, update info of a product, remove a product
+- [X]Add a new product, update info of a product, remove a product
 
 ### Level 2: Additional Requirements
 
 **Authentication:**
 
-- Implement register and login functionality via email and password
-- Protect the routes based on login and admin status
+- [x]Implement register and login functionality via email and password
+- [ ]Protect the routes based on login and admin status
 
 **Functionalities for an Admin:**
 
-- list all users, delete a user.
-- list all orders
+- [ ]list all users, delete a user.
+- [ ]list all orders
 
 ### Level 3: Bonus Requirement (Optional)
 
-- Messages, show loading, success, and error messages (e.g., when loading products list or adding new product)
-- Implement pagination feature
-- Create a Profile Page (only available if user logs in), implement editing user profile feature (user can change first name, last name)
+- [X]Messages, show loading, success, and error messages (e.g., when loading products list or adding new product)
+- [ ]Implement pagination feature
+- [ ]Create a Profile Page (only available if user logs in), implement editing user profile feature (user can change first name, last name)
 
 `Please note that the bonus requirements and reviews are optional and can be completed if you have additional time and advanced skills.`
 

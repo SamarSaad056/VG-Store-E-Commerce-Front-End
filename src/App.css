@@ -1,3 +1,98 @@
+/*Bot*/
+
+#chatbot {
+  position: fixed;
+  bottom: 70px; /* Space from the button */
+  right: 20px;
+  width: 450px; /* Set a small width */
+  max-height: 400px; /* Limit height */
+  background:#3b0944;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex; /* Ensure it uses flexbox */
+  flex-direction: column;
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Fully transparent */
+  transition: visibility 0s, opacity 0.3s ease; /* Smooth transition */
+}
+
+#chatbot.visible {
+  visibility: visible; /* Make it visible */
+  opacity: 1; /* Fully opaque */
+}
+
+.chat-header {
+  background:#74407b;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: move; /* Indicate that the header can be dragged */
+}
+
+.chat-box {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chat-message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bot-message {
+  background:#1bab9d;
+  text-align: left;
+}
+
+.user-message {
+  background:#a211a7;
+  text-align: right; 
+}
+
+input[type="text"] {
+  width: calc(100% - 60px);
+  padding: 10px;
+  border: none; /* Clean look */
+  border-radius: 5px;
+}
+
+#send-button{
+  padding: 10px;
+  background:#a211a7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#send-button:hover {
+  background: #8b0e90;
+}
+
+/* Button to toggle chatbot visibility */
+#toggle-chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #c9dbefc0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#toggle-chatbot:hover {
+  background: #c9dbefdb;
+}
+
+
 /*NavBar*/
 nav {
   padding-top: 0px;
@@ -13,7 +108,6 @@ nav ul {
 
 nav ul li {
   margin: 0 15px;
-  
 }
 
 nav ul li a {
@@ -21,14 +115,10 @@ nav ul li a {
   text-decoration: none;
   padding: 50px;
   margin-bottom: 10px;
-
 }
 nav ul li:hover {
-
   background-color: #27e1ce;
   border-radius: 7px;
-  
-
 }
 header {
   background: #3b0944;
@@ -52,10 +142,9 @@ header {
   background-color: #2a2438;
   align-items: center;
   height: 600px;
-  background-image: url('./BackGroundImg.gif');
+  background-image: url("./BackGroundImg.gif");
   background-size: 1600px 700px;
   background-repeat: no-repeat;
-  
 }
 .home-description {
   font-size: 2.2rem;
@@ -63,63 +152,74 @@ header {
   margin-left: 80px;
   margin-right: 80px;
   animation: customAni 5s ease 0s infinite normal none;
-  
 }
 
 @keyframes customAni {
   0% {
-	animation-timing-function: ease-out;
-	transform: scale(1);
-	transform-origin: center center;
+    animation-timing-function: ease-out;
+    transform: scale(1);
+    transform-origin: center center;
   }
 
   10% {
-	animation-timing-function: ease-in;
-	transform: scale(0.91);
+    animation-timing-function: ease-in;
+    transform: scale(0.91);
   }
 
   17% {
-	animation-timing-function: ease-out;
-	transform: scale(0.98);
+    animation-timing-function: ease-out;
+    transform: scale(0.98);
   }
 
   33% {
-	animation-timing-function: ease-in;
-	transform: scale(0.87);
+    animation-timing-function: ease-in;
+    transform: scale(0.87);
   }
 
   45% {
-	animation-timing-function: ease-out;
-	transform: scale(1);
+    animation-timing-function: ease-out;
+    transform: scale(1);
   }
 }
-
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap");
 
 svg {
-	font-family: "Roboto Flex", sans-serif;
-	width: 100%; height: 20%;
+  font-family: "Roboto Flex", sans-serif;
+  width: 100%;
+  height: 20%;
 }
 svg text {
-	animation: stroke 8s infinite alternate;
-	stroke-width: 2;
-	stroke: white;
-	font-size: 100px;
+  animation: stroke 8s infinite alternate;
+  stroke-width: 2;
+  stroke: white;
+  font-size: 100px;
 }
 @keyframes stroke {
-	0%   {
-		fill: white; stroke: white;
-		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
-	}
-	70%  {fill: white; stroke: white; }
-	80%  {fill: white; stroke: white; stroke-width: 3; }
-	100% {
-		fill: #df19e6; stroke:white;
-		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
-	}
+  0% {
+    fill: white;
+    stroke: white;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: white;
+    stroke: white;
+  }
+  80% {
+    fill: white;
+    stroke: white;
+    stroke-width: 3;
+  }
+  100% {
+    fill: #df19e6;
+    stroke: white;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
 }
-
 
 /* buttom */
 .btn-view-products {
@@ -129,7 +229,8 @@ svg text {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", sans-serif;
   font-size: 18px;
   font-weight: 600;
   outline: 0;
@@ -137,7 +238,7 @@ svg text {
   position: relative;
   text-align: center;
   text-decoration: none;
-  transition: all .3s;
+  transition: all 0.3s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -152,15 +253,16 @@ svg text {
   content: "";
   height: 50%;
   left: 4%;
-  opacity: .5;
+  opacity: 0.5;
   position: absolute;
   top: 0;
-  transition: all .3s;
+  transition: all 0.3s;
   width: 92%;
 }
 
 .btn-view-products:hover {
-  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
+    rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
   transform: scale(1.05);
 }
 
@@ -170,16 +272,14 @@ svg text {
   }
 }
 
-
-
 /*Product*/
 .ProductList {
-  flex: 4; 
+  flex: 4;
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: flex-start; 
-  padding: 20px; 
-  margin-top: 5px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 0px;
 }
 
 .ProductList h3 {
@@ -191,12 +291,11 @@ svg text {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  height: 600px;
+  height: auto;
   background-color: #552e5a;
   color: white;
+  min-height: 600px;
 }
-
-
 
 .product-detail-img {
   flex-shrink: 0;
@@ -207,23 +306,73 @@ svg text {
   height: auto;
   max-height: 400px;
 }
+.product-detail svg {
+  height: 40px;
+  width: 50px;
+  padding: 25px;
+  color: white;
+}
+.YearOfRelease{
+  color: #888;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style:oblique;
 
-.BacktoProducts{
+}
+.description{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:15px;
+}
+
+
+.star-rating {
+	white-space: nowrap;
+}
+.star-rating [type="radio"] {
+	appearance: none;
+}
+.star-rating i {
+	font-size: 1.2em;
+	transition: 0.3s;
+}
+
+.star-rating label:is(:hover, :has(~ :hover)) i {
+	transform: scale(1.35);
+	color: #fffdba;
+	animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
+}
+.star-rating label:has(~ :checked) i {
+	color: #faec1b;
+	text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+}
+
+@keyframes jump {
+	0%,
+	50% {
+		transform: translatey(0) scale(1.35);
+	}
+	100% {
+		transform: translatey(-15%) scale(1.35);
+	}
+}
+
+
+.BacktoProducts {
   background-color: #df19e6;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 15px;
-  margin-right: 15px;
-  text-decoration: none;
-  color: white;
+  position: absolute;
+  left: 40px;
+  margin-bottom: 50px;
 }
-.BacktoProducts:hover{
+.BacktoProducts a {
+  color: white; 
+  text-decoration: none; 
+}
+.BacktoProducts:hover {
   background-color: #bf16c5;
-
 }
-
 
 .product {
   border-radius: 10px;
@@ -237,7 +386,7 @@ svg text {
   transition: transform 0.2s ease-in-out;
   background-color: #74407b;
   font-size: larger;
-  
+  position: relative;
 }
 .product:hover {
   transform: scale(1.02);
@@ -262,7 +411,7 @@ svg text {
   height: auto;
 }
 
-.AddToCart{
+.AddToCart {
   background-color: #27e1ce;
   color: white;
   border: none;
@@ -270,11 +419,13 @@ svg text {
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 15px;
+  position: absolute;
+  right: 40px;
 }
-.AddToCart:hover{
+.AddToCart:hover {
   background-color: #22c5b4;
 }
-.ViewDetails{
+.ViewDetails {
   background-color: #df19e6;
   color: white;
   border: none;
@@ -283,18 +434,19 @@ svg text {
   cursor: pointer;
   margin-bottom: 15px;
   margin-right: 15px;
+  position: absolute;
+  left: 40px;
 }
 
 .ViewDetails a {
-  color: white; /* Set link color to white */
-  text-decoration: none; /* Remove underline */
+  color: white; 
+  text-decoration: none; 
 }
-.ViewDetails:hover{
+.ViewDetails:hover {
   background-color: #bf16c5;
 }
 
-
-.ProductPageDiv{
+.ProductPageDiv {
   background-color: #552e5a;
   height: auto;
   margin-top: 0px;
@@ -303,36 +455,32 @@ svg text {
 }
 
 .ProductPageDiv h2 {
-
-  font-family:serif;
+  font-family: serif;
   margin-left: 50px;
   color: white;
-  
 }
 
 .image-container {
-  width: 200px; 
-  height: 200px; 
-  overflow: hidden; 
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
   margin-left: 50px;
 }
-
-
 
 .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .searchInput {
   height: 30px;
   width: 300px;
   padding: 10px 15px;
-  border: 1px solid #552e5a; 
-  outline: none; 
-  transition: border-color 0.3s; 
-  font-size: 14px; 
+  border: 1px solid #552e5a;
+  outline: none;
+  transition: border-color 0.3s;
+  font-size: 14px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-left: 50px;
   background-color: #371e3ab3;
@@ -345,20 +493,18 @@ svg text {
 
 .searchInput:focus {
   border-color: #df19e6;
- 
 }
-.Noproductsfound{
+.Noproductsfound {
   height: 100px;
   width: 200px;
   margin-left: 300px;
   margin-top: 60px;
 }
-.NoproductsfoundCart{
+.NoproductsfoundCart {
   height: 100px;
   width: 200px;
   margin-top: 150px;
   margin-right: 185px;
-
 }
 
 /*Footer*/
@@ -379,39 +525,35 @@ footer a {
 
 .ContentWrapper {
   display: flex;
-  width: 100%; 
+  width: 100%;
 }
 
-
+.SearchDiv {
+  flex: 1;
+}
 .filter-container {
   padding: 30px;
   margin-left: 20px;
-  width: 280px; 
+  width: 280px;
   background-color: #552e5a;
-  flex: 1; 
-  font-family:serif;
-  color:white;
- 
-  
+  flex: 1;
+  font-family: serif;
+  color: white;
 }
 
 .filter-container h2 {
   margin-bottom: 10px;
   display: flex;
   margin: 10px 0;
-  font-family:serif;
+  font-family: serif;
   color: white;
 }
 
-
-
 input[type="checkbox"] {
   margin-right: 5px;
-  
-  
 }
 
-.ApplyFilters{
+.ApplyFilters {
   background-color: #df19e6;
   color: white;
   border: none;
@@ -421,68 +563,159 @@ input[type="checkbox"] {
   margin-top: 50px;
   margin-bottom: 5px;
   margin-left: 45px;
-
 }
 
 /*Cart*/
-.cart{
+.cart {
   height: auto;
-  background-color:#552e5a;
+  background-color: #552e5a;
 }
-
 .CartList {
   color: white;
   margin-top: 20px;
   padding: 15px;
   background-color: #74407b;
-  width: 1000px;
-  display: flex; 
-  align-items: center; 
+  width: 1300px;
+  display: flex;
+  align-items: center;
   height: auto;
+  position: relative;
+}
+.cart h3{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+}
+.TotailPrice{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+  height: 150px;
+
+}
+.OrderButton{
+  position: relative;
+  position: absolute;
+  right: 320px;
+  width: 150px;
+  padding: 10px;
+  background-color:#22c5b4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   
+}
+.RemoveButton {
+  position: absolute;
+  right: 20px;
+  width: 150px;
+  padding: 10px;
+  background-color: #df19e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .image-containerCart {
   width: 170px;
   height: 100px;
-  overflow: hidden; 
+  overflow: hidden;
   margin-right: 20px; /* Add space between image and text */
 }
 
 .image-containerCart img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
+}
+.QuantityButton1 {
+  width: 40px;
+  background-color: #22c5b4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  right: 200px;
+}
+.QuantityButton2 {
+  width: 40px;
+  background-color: #22c5b4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  right: 260px;
+}
+.QuantityButton2:hover{
+  background-color: #1bab9d;
+}
+.QuantityButton1:hover{
+  background-color: #1bab9d;
 }
 
+.Quantity{
+  position: absolute;
+  right: 320px;
+  color: #888;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style:oblique;
+}
+
+
+.Price{
+  position: absolute;
+  right: 430px;
+  color: #888;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', bold;
+  font-style:oblique;
+ 
+
+}
 
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height:100%;
-  background-color:#552e5a;
-  min-height:650px;
+  height: 100%;
+  background-color: #552e5a;
+  min-height: 650px;
 }
 
 .login-form {
-  background-color:#74407b;
+  background-color: #74407b;
   padding: 20px;
-  border-radius: 8px; 
+  border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 500px; 
+  width: 500px;
   height: 400px;
- 
-
 }
 .login-container h2 {
   text-align: center;
   color: white;
- 
 }
 
 .form-group {
   margin-bottom: 15px;
+}
+.form-group  label{
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+  margin-left: 15px;
+}
+.form-group input{
+  width: 85%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 15px;
+  border: 1px solid #552e5a;
+  background-color: #552e5a;
+
 }
 
 .login-container label {
@@ -493,19 +726,19 @@ input[type="checkbox"] {
 }
 
 .login-container input {
-  width: 85%; 
+  width: 85%;
   padding: 10px;
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
   margin-left: 15px;
-  border: 1px solid #552e5a; 
+  border: 1px solid #552e5a;
   background-color: #552e5a;
 }
 
-.login-container button {
-  width: 150px; 
+.LogInButton {
+  width: 150px;
   padding: 10px;
-  background-color: #df19e6; 
+  background-color: #df19e6;
   color: white;
   border: none;
   border-radius: 4px;
@@ -515,11 +748,72 @@ input[type="checkbox"] {
 }
 
 .login-container button:hover {
-  background-color: #be16c4; 
+  background-color: #be16c4;
 }
 
 
+/*dashboard*/
 
+.dashboard {
+  display: flex;
+  min-height: 150vh;
+  font-family: Arial, sans-serif;
+  height: auto;
+}
 
+.dashboard-sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color:#3b0944;
+  border-right: 1px solid #ccc;
+}
+
+.dashboard-sidebar h2 {
+  margin-top: 0;
+  color:#22c5b4;
+}
+
+.dashboard-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard-sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  color:#22c5b4;
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-sidebar li:hover {
+  background-color: #e0e0e0;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #74407b;
+  color: white;
+}
+
+.dashboard-content h2 {
+  margin-top: 0;
+  color: white;
+}
+
+.dashboard-content button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color:#be16c4;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-content button:hover {
+  background-color: #a211a7;
+}
 
 

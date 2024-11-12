@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-/*import HomeIcon from '@mui/icons-material/Home';*/
+import PropTypes from "prop-types";
 
 
 
-const Navbar = () => {
+const Navbar = ( {userRole} ) => {
     return (
         <header className="header">
         <div id="Logo">
-          <h3>GHub Store</h3>
+          <h3>VG Store</h3>
         </div>
     
         <nav>
@@ -17,12 +17,21 @@ const Navbar = () => {
           <li><Link to="/Games">Games</Link></li>
             <li><Link to ="/logIn">LogIn</Link></li>
             <li><Link to="/Cart">Cart</Link></li>
+            { userRole==="SystemAdmin" &&(
+              <li><Link to="/dashboard">Dashboard</Link></li>
+            )
+            }
+          
+
            
           </ul>
         </nav>
     
       </header>
     );
+};
+Navbar.propTypes = {
+  userRole: PropTypes.string, // userRole can be "admin", "employee", etc.
 };
 
 export default Navbar;
