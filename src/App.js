@@ -1,6 +1,6 @@
 import React , { useState }from 'react';
 import { Route, Routes ,Router} from 'react-router-dom';
-import HomePage from '../Pages/HomePage.js';
+import HomePage from './Pages/HomePage.js';
 import ProductPage from './Pages/ProductPage.js';
 import ProductDetailPage from './Pages/ProductDetailPage.js';
 import './App.css';
