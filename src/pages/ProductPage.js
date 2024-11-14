@@ -8,7 +8,7 @@ import { Margin } from "@mui/icons-material";
 
 
 function ProductPage({ cartItems, setCartItems }) {
-  const url = "http://localhost:5125/api/v1/VideoGamesInfo/Detailed";
+  const url = "http://localhost:5125/api/v1/videoGamesInfo/Detailed";
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
@@ -17,6 +17,9 @@ function ProductPage({ cartItems, setCartItems }) {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [scoreRange, setScoreRange] = useState([0, 500]);
   const [notification, setNotification] = useState("");
+  const [Categories, setCategories] = useState([]);
+  const [consoles, setConsoles] = useState([]);
+  const url2="http://localhost:5125/api/v1/Categories/Detailed";
 
   function getData() {
     axios
@@ -39,8 +42,31 @@ function ProductPage({ cartItems, setCartItems }) {
       });
   }
 
+  // Fetch Consoles and Categories
+  function getConsolesAndCategories() {
+    axios
+      .get(url2) // Adjust this URL to your actual endpoint for consoles and categories
+      .then((response) => {
+        const consolesData = response.data.consoles; 
+        const categoriesData = response.data.categories; 
+        console.log(categoriesData);
+
+        if (consolesData) {
+          setConsoles(consolesData);
+        }
+        if (categoriesData) {
+          setCategories(categoriesData);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching console and category data:", error);
+        setError("Failed to Fetch Consoles and Categories");
+        setLoading(false);
+      });
+    }
   useEffect(() => {
-    getData();
+    getData(); getConsolesAndCategories();
   }, []);
 
   const handleFilterChange = (platforms, genres, scoreRange) => {
@@ -53,12 +79,23 @@ function ProductPage({ cartItems, setCartItems }) {
     const matchesSearchTerm = product.gameName
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
-    const matchesPlatform =
-      selectedPlatforms.length === 0 ||
-      selectedPlatforms.includes(product.ConsoleName);
-    const matchesGenre =
-      selectedGenres.length === 0 ||
-      selectedGenres.includes(product.CategoryName);
+ // Create an array of console names
+ const consoleNames = product.consoles ? product.consoles.map(c => c.consoleName) : [];
+
+ // Create an array of category names
+ const categoryNames = product.categories ? product.categories.map(category => category.categoryName) : [];
+ //console.log(consoleNames)
+ console.log(categoryNames)
+ // Check if the product matches the selected platforms
+ const matchesPlatform =
+   selectedPlatforms.length === 0 || // No platform selected, include all
+   consoleNames.some(consoleName => selectedPlatforms.includes(consoleName)); // Check each console name
+
+ // Check if the product matches the selected genres
+ const matchesGenre =
+   selectedGenres.length === 0 || // No genre selected, include all
+   categoryNames.some(categoryName => selectedGenres.includes(categoryName)); // Check each category name
+
     const matchesScore =
       product.videoGameVersions[0].price !== undefined &&
       product.videoGameVersions[0].price >= scoreRange[0] &&
@@ -85,6 +122,7 @@ function ProductPage({ cartItems, setCartItems }) {
       localStorage.setItem("cartItems", JSON.stringify(newItems)); // Update localStorage
       return newItems;
     });
+    alert("Game Added to Cart !")
   };
   
   

@@ -6,8 +6,8 @@ const Filter = ({ onFilterChange }) => {
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [scoreRange, setScoreRange] = useState([0, 500]);
 
-    const platforms = ['PC', 'PlayStation', 'Xbox', 'Nintendo Switch', 'Mobile'];
-    const genres = ['Action', 'Adventure', 'Role-Playing', 'Simulation', 'Strategy', 'Sports'];
+    const platforms = ['PC', 'PlayStation', 'RetroCube', 'FusionPlay', 'GamerBox'];
+    const genres = ['Action', 'Adventure', 'Racing', 'Simulation'];
 
     const handlePlatformChange = (platform) => {
         setSelectedPlatforms(prev =>

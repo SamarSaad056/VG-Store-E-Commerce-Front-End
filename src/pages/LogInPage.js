@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
+
 
 const LogInPage = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -88,6 +89,8 @@ const LogInPage = ({ onLogin }) => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+           <p>Do not have an account? <Link to="/register">Register Now</Link></p>
+
           </div>
           {error && <p className="error-message">{error}</p>}
           <button className="LogInButton" type="submit" disabled={loading}>

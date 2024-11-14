@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import AddProductForm from '../Forms/AddProductForm';
 import DeleteProductForm from '../Forms/DeleteProductForm';
 import UpdateProductForm from '../Forms/UpdateProductForm';
+import DeleteUserForm from '../Forms/DeletUserForm';
+import ListUsersForm from '../Forms/ListUsersForm';
+import ListOrdersForm from '../Forms/ListOrdersForm';
 
 
-function DashboardPage() {
+function DashboardPage () {
   const [selectedSection, setSelectedSection] = useState(null); 
 
 
@@ -31,6 +34,41 @@ function DashboardPage() {
               </div>
             </div>
           );
+          case 'User Management':{
+            return (
+              <div>
+                <h2>Users Management</h2>
+                <div className="product-forms">
+                  <div className="form-section">
+                    <h3>Users List</h3>
+                    <ListUsersForm/>
+                  </div>
+                  <div className="form-section">
+                    <h3>Delete User</h3>
+                    <DeleteUserForm />
+                  </div>
+                </div>
+              </div>
+            )
+
+          }
+          case 'Orders':{
+            return (
+              <div>
+                <h2>Orders Management</h2>
+                  <div className="form-section">
+                    <h3>Orders List</h3>
+                    <ListOrdersForm/>
+                  </div>
+                </div>
+             
+            )
+
+          }
+
+
+          
+
         default:
           return <p>Select an action from the sidebar.</p>;
       }
@@ -56,4 +94,4 @@ function DashboardPage() {
   );
 }
 
-export default DashboardPage;
+export default DashboardPage

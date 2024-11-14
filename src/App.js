@@ -9,7 +9,8 @@ import Footer from './Components/Footer';
 import Cart from './Components/Cart.js';
 import LogInPage from './Pages/LogInPage';
 import DashboardPage from './Pages/DashboardPage.js';
-import Bot from "./Pages/Bot.js"
+import Bot from "./Pages/Bot.js";
+import RegisterPage from './Pages/RegisterPage.js';
 
 
 function App() {
@@ -36,7 +37,8 @@ function App() {
         <Route path="/GameDetail/:id" element={<ProductDetailPage />} />
         <Route path="/Cart" element={<Cart cartItems={cartItems} />} />
         <Route path="/LogIn" element={<LogInPage onLogin={handleLogin}/>} />
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/Register" element={<RegisterPage/>} />
+        <Route path="/Dashboard" element={<DashboardPage />} />
       </Routes>
       <Bot/>
       <Footer />

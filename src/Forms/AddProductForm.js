@@ -42,7 +42,7 @@ function AddProductForm() {
       );
     
       if (response.data) {
-        console.log("Game Added");
+        alert("Game Added");
         setSuccessMessage("Game added successfully!"); 
         setErrorMessage(''); 
         console.log("Stored Token:", localStorage.getItem("Token"));

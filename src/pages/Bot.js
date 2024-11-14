@@ -4,7 +4,7 @@ import axios from 'axios';
 const Bot = () => {
   const [userInput, setUserInput] = useState('');
   const [chatMessages, setChatMessages] = useState([
-    { text: "Welcome! I am here to help! Type Number of your Question: \n 1. Recommend games for me based on genre and console \n 2. Tell me more about a specific game \n 3. Show me the top 3 rated games", className: "bot-message" }
+    { text: "Welcome to the Video Games Assistant! 🎮 \n I’m here to help you discover your next favorite game! \n Please type the number corresponding to your question below:\n \n 1-🎮 Recommend games based on your favorite genre and console.\n 2- 📖 Learn more about a specific game you have in mind.\n 3-⭐ View the top 3 rated games based on user reviews", className: "bot-message" }
   ]);
   const [isChatVisible, setIsChatVisible] = useState(false);
   const [caseChoice, setCaseChoice] = useState('');

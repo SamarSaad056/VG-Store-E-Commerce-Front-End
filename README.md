@@ -30,17 +30,17 @@ This project is a frontend for an e-commerce website, developed using modern web
 **Authentication:**
 
 - [x]Implement register and login functionality via email and password
-- [ ]Protect the routes based on login and admin status
+- [X]Protect the routes based on login and admin status
 
 **Functionalities for an Admin:**
 
-- [ ]list all users, delete a user.
+- [X]list all users, delete a user.
 - [ ]list all orders
 
 ### Level 3: Bonus Requirement (Optional)
 
 - [X]Messages, show loading, success, and error messages (e.g., when loading products list or adding new product)
-- [ ]Implement pagination feature
+- [X]Implement pagination feature
 - [ ]Create a Profile Page (only available if user logs in), implement editing user profile feature (user can change first name, last name)
 
 `Please note that the bonus requirements and reviews are optional and can be completed if you have additional time and advanced skills.`
