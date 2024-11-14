@@ -26,23 +26,25 @@ function App() {
   };
 
   return (
-    <div>
-      <Navbar userRole={userRole}/>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route 
-          path="/Games" 
-          element={<ProductPage cartItems={cartItems} setCartItems={setCartItems} />} 
-        />
-        <Route path="/GameDetail/:id" element={<ProductDetailPage />} />
-        <Route path="/Cart" element={<Cart cartItems={cartItems} />} />
-        <Route path="/LogIn" element={<LogInPage onLogin={handleLogin}/>} />
-        <Route path="/Register" element={<RegisterPage/>} />
-        <Route path="/Dashboard" element={<DashboardPage />} />
-      </Routes>
-      <Bot/>
-      <Footer />
-    </div>
+<div>
+  <Navbar userRole={userRole} />
+  <Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route 
+        path="/Games" 
+        element={<ProductPage cartItems={cartItems} setCartItems={setCartItems} />} 
+      />
+      <Route path="/GameDetail/:id" element={<ProductDetailPage />} />
+      <Route path="/Cart" element={<Cart cartItems={cartItems} />} />
+      <Route path="/LogIn" element={<LogInPage onLogin={handleLogin} />} />
+      <Route path="/Register" element={<RegisterPage />} />
+      <Route path="/Dashboard" element={<DashboardPage />} />
+    </Routes>
+  </Router>
+  <Bot />
+  <Footer />
+</div>
   );
 }
 
