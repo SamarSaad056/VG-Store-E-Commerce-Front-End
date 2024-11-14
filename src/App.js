@@ -1,16 +1,16 @@
 import React , { useState }from 'react';
 import { Route, Routes ,Router} from 'react-router-dom';
-import ProductPage from "./Pages/ProductPage.js";
-import ProductDetailPage from "./Pages/ProductDetailPage.js";
+import ProductPage from "./pages/ProductPage.js";
+import ProductDetailPage from "./pages/ProductDetailPage.js";
 import './App.css';
 import Navbar from "./Components/NavBar.js";
 import Footer from "./Components/Footer.js";
 import Cart from "./Components/Cart.js";
-import LogInPage from "./Pages/LogInPage.js";
-import DashboardPage from "./Pages/DashboardPage.js";
-import Bot from "./Pages/Bot.js";
-import RegisterPage from "./Pages/RegisterPage.js";
-import HomePage from "./Pages/HomePage.js";
+import LogInPage from "./pages/LogInPage.js";
+import DashboardPage from "./pages/DashboardPage.js";
+import Bot from "./pages/Bot.js";
+import RegisterPage from "./pages/RegisterPage.js";
+import HomePage from "./pages/HomePage.js";
 
 
 function App() {
