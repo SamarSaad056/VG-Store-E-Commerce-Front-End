@@ -1,5 +1,5 @@
 import React , { useState }from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes ,Router} from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import ProductPage from './Pages/ProductPage';
 import ProductDetailPage from './Pages/ProductDetailPage';
@@ -28,8 +28,8 @@ function App() {
   return (
 <div>
   <Navbar userRole={userRole} />
-  <Router>
-    <Routes>
+  <Routes>
+
       <Route path="/" element={<HomePage />} />
       <Route 
         path="/Games" 
@@ -40,8 +40,8 @@ function App() {
       <Route path="/LogIn" element={<LogInPage onLogin={handleLogin} />} />
       <Route path="/Register" element={<RegisterPage />} />
       <Route path="/Dashboard" element={<DashboardPage />} />
-    </Routes>
-  </Router>
+  
+  </Routes>
   <Bot />
   <Footer />
 </div>
