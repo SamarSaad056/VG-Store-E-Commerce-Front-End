@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer>
-            <p>&copy; 2024 GHub Store. All rights reserved.</p>
+            <p>&copy; 2024 VG Store. All rights reserved.</p>
         </footer>
     );
 };

@@ -22,7 +22,7 @@ const RegisterPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5125/api/v1/Customer",
+        "https://fusiontech1.onrender.com/api/v1/Customer",
         {
           personName:Pname ,
           personEmail: username, 

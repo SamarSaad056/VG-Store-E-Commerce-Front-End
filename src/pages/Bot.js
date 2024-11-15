@@ -37,7 +37,7 @@ const Bot = () => {
           setCaseChoice('2'); // Set choice to '2'
           return; // Exit early; wait for the next input
         } else if (trimmedInput === "3") {
-          apiEndpoint = "http://localhost:5125/api/Bot/top-rated";
+          apiEndpoint = "https://fusiontech1.onrender.com/api/Bot/top-rated";
           const response = await axios.get(apiEndpoint);
           const gameMessages = [];
           response.data.slice(0, 3).forEach((game) => {

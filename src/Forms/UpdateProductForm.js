@@ -23,7 +23,7 @@ function UpdateProductForm() {
   
     try {
 
-      const response = await axios.put(`http://localhost:5125/api/v1/VideoGamesInfo/${trimmedId}?newGameName=${encodeURIComponent(formData.newGameName)}`, 
+      const response = await axios.put(`https://fusiontech1.onrender.com/api/v1/VideoGamesInfo/${trimmedId}?newGameName=${encodeURIComponent(formData.newGameName)}`, 
         {}, 
         {
           headers: {

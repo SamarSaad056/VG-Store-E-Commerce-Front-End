@@ -10,7 +10,7 @@ function DeleteUserForm() {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://localhost:5125/api/v1/SystemAdmin`,
+      await axios.delete(`https://fusiontech1.onrender.com/api/v1/SystemAdmin`,
         {
         headers: {
             Authorization: `Bearer ${token}`,

@@ -9,7 +9,7 @@ function DeleteProductForm() {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://localhost:5125/api/v1/VideoGamesInfo/${productId}`,
+      await axios.delete(`https://fusiontech1.onrender.com/api/v1/VideoGamesInfo/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

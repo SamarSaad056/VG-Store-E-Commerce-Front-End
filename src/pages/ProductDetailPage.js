@@ -12,7 +12,7 @@ function ProductDetailPage() {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5125/api/v1/VideoGamesInfo/${id}`
+          `https://fusiontech1.onrender.com/api/v1/VideoGamesInfo/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch product");

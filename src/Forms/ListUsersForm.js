@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function ListUsersForm() {
     const token = localStorage.getItem("Token");
-    const url = "http://localhost:5125/api/v1/Customer";
+    const url = "https://fusiontech1.onrender.com/api/v1/Customer";
     const [customers, setCustomers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

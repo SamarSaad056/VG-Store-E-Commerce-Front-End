@@ -32,7 +32,7 @@ function AddProductForm() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:5125/api/v1/VideoGamesInfo',
+        'https://fusiontech1.onrender.com/api/v1/VideoGamesInfo',
         formData,
         {
           headers: {

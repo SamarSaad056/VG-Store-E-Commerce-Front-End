@@ -8,7 +8,7 @@ import { Margin } from "@mui/icons-material";
 
 
 function ProductPage({ cartItems, setCartItems }) {
-  const url = "http://localhost:5125/api/v1/videoGamesInfo/Detailed";
+  const url = "https://fusiontech1.onrender.com/api/v1/videoGamesInfo/Detailed";
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ function ProductPage({ cartItems, setCartItems }) {
   const [notification, setNotification] = useState("");
   const [Categories, setCategories] = useState([]);
   const [consoles, setConsoles] = useState([]);
-  const url2="http://localhost:5125/api/v1/Categories/Detailed";
+  const url2="https://fusiontech1.onrender.com/api/v1/Categories/Detailed";
 
   function getData() {
     axios
